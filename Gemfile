@@ -1,3 +1,4 @@
-require 'sinatra'
-require 'indico'
-require 'json'
+source 'https://rubygems.org'
+gem 'sinatra'
+gem 'indico'
+gem 'json'
