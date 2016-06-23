@@ -11,10 +11,11 @@
   <div class="col-sm-8">
   	<h1>Responses</h1>
   	<% if @array %>
+  		<ul class="list-group">
 		<% @array.each do |k,v| %>
-			<h1><%= k %></h1>
-			<h3><%= v %></h3>
+			<li class="list-group-item"><span class="badge"><%= v.round(2) %></span><%= k %></li>
 		<% end %>
+		</ul>
 	<% end %>
   </div>
 </div>

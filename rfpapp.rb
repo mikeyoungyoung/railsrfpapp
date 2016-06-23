@@ -41,7 +41,8 @@ end
 
 post '/answers' do
 	request = params["question"]
-    @array = @@rfp_collection.predict(request) #Indico.keywords(request, {version: 2})
+    @array = @@rfp_collection.predict(request, {top_n: 3}).sort_by{|k,v| v}.reverse #Indico.keywords(request, {version: 2})
+    #@array.sort_by{|k,v| v}.reverse
     #{}"#{resp}"
 
     erb :answers, :layout => :layout
