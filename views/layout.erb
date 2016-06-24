@@ -8,10 +8,6 @@
   <link href="css/styles.css" rel="stylesheet">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
   <script src="js/modernizr.custom.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript">
@@ -41,6 +37,11 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+
+  <nav class="nav nav-inline">
+    <a class="nav-link active" href="/">Home</a>
+    <a class="nav-link" href="/answers">Answers</a>
+  </nav>
   
   <div id="main" class="container">
     <div class="page-header">
@@ -54,18 +55,16 @@
     <p><small>Powered by <a href="https://www.heroku.com">Heroku</a> & <a href="https://www.indico.io">Indico.io</a></small></p>
   </footer>
   <!-- Latest compiled and minified JavaScript -->
+  <!-- jQuery first, then Bootstrap JS. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <!-- loading scripts -->
-    <script src="js/classie.js"></script>
-    <script src="js/progressButton.js"></script>
-    <script>
-      [].slice.call( document.querySelectorAll( 'button.progress-button' ) ).forEach( function( bttn ) {
+  <!-- loading scripts -->
+  <script src="js/classie.js"></script>
+  <script src="js/progressButton.js"></script>
+  <script>
+    [].slice.call( document.querySelectorAll( 'button.progress-button' ) ).forEach( function( bttn ) {
         new ProgressButton( bttn, {
           callback : function( instance ) {
             var progress = 0,

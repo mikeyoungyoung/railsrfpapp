@@ -17,18 +17,18 @@
   		<ul class="list-group">
 		<% @array.each do |k,v,r| %>
 			<li class="list-group-item">
-				<div class="row">
-					<div class="col-xs-12 .col-sm-6 .col-lg-8">
-						<h4>Relevance: <span class="badge"><%= r.round(2) %></span></h4>
-					</div>
-					<div class="col-xs-12 .col-sm-6 .col-lg-8">
-						<h4>Collection Score: <span class="badge"><%= v.round(2) %></span></h4>
-					</div>	
+				<div class="media">
+  					<a class="media-left" href="#">
+    					<!--<img class="media-object" data-src="..." alt="Generic placeholder image">-->
+    					<h4>Relevance: <span class="badge"><%= r.round(2) %></span></h4>
+    					<h4>Collection Score: <span class="badge"><%= v.round(2) %></span></h4>
+  					</a>
+  					<div class="media-body">
+    					<h4 class="media-heading">Response Text:</h4>
+    						<%= k %>
+  					</div>
 				</div>
-				
-				<div class="well">
-					<%= k %>
-				</div>
+
 			</li>
 		<% end %>
 		</ul>
