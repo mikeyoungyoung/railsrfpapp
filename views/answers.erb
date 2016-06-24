@@ -12,8 +12,15 @@
   	<h1>Responses</h1>
   	<% if @array %>
   		<ul class="list-group">
-		<% @array.each do |k,v| %>
-			<li class="list-group-item"><span class="badge"><%= v.round(2) %></span><%= k %></li>
+		<% @array.each do |k,v,r| %>
+			<li class="list-group-item">
+				<h3>Relevance: <span class="badge"><%= r.round(2) %></span></h3>
+				<h3>Collection Score: <span class="badge"><%= v.round(2) %></span></h3>
+				<div class="well">
+					<%= k %>
+				</div>
+				
+			</li>
 		<% end %>
 		</ul>
 	<% end %>

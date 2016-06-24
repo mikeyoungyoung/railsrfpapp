@@ -41,9 +41,19 @@ end
 
 post '/answers' do
 	request = params["question"]
-    @array = @@rfp_collection.predict(request, {top_n: 3}).sort_by{|k,v| v}.reverse #Indico.keywords(request, {version: 2})
-    #@array.sort_by{|k,v| v}.reverse
-    #{}"#{resp}"
-
+    @array = @@rfp_collection.predict(request, {top_n: 3}).sort_by{|k,v| v}.reverse
+    #get relevance of search terms to documents returned
+    @relevance = {}
+    #puts "************************************************"
+    @array.each do |a|
+    	#responses[0].push( Indico.relevance(responses[0][0], request ).first )
+    	#puts "%%%%%%%%%%%%%%%% #{a[0]} ----- #{request}"
+    	a.push( Indico.relevance( a[0], request ).first )
+    	#@relevance[k] = Indico.relevance(k, request)
+    	#puts a
+    end
+    #puts "************************************************"
+    #puts @relevance
+    
     erb :answers, :layout => :layout
 end

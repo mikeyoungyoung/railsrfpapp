@@ -14,7 +14,9 @@
   	<% if @array %>
 		<% @array.each do |k,v| %>
 			<h1><%= k %></h1>
-			<h3><%= v %></h3>
+			<div class="well">
+				<p><%= v %></p>
+			</div>
 		<% end %>
 	<% end %>
   </div>
