@@ -31,10 +31,8 @@ get '/answers' do
 	#get the answers to a question here
 	request = params["message"]
 	puts request
-	#@response = Indico.keywords(request, {version: 2})
 	puts @response
-
-	#{}"This is the response"
+	
 	erb :answers, :layout => :layout
 
 end
@@ -45,16 +43,9 @@ post '/answers' do
     @array = @@rfp_collection.predict(request, {top_n: num_entries}).sort_by{|k,v| v}.reverse
     #get relevance of search terms to documents returned
     @relevance = {}
-    #puts "************************************************"
     @array.each do |a|
-    	#responses[0].push( Indico.relevance(responses[0][0], request ).first )
-    	#puts "%%%%%%%%%%%%%%%% #{a[0]} ----- #{request}"
     	a.push( Indico.relevance( a[0], request ).first )
-    	#@relevance[k] = Indico.relevance(k, request)
-    	#puts a
     end
-    #puts "************************************************"
-    #puts @relevance
     
     erb :answers, :layout => :layout
 end
