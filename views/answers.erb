@@ -11,7 +11,8 @@
         </form>
   </div>
   <div class="col-sm-8 ">
-  	<h1>Responses</h1>
+  	<h1>Responses to:</h1>
+  	<h3><%= params[:message] %></h3>
   	<% if @array %>
   		<ul class="list-group">
 		<% @array.each do |k,v,r| %>
