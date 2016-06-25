@@ -41,6 +41,9 @@ end
 post '/answers' do
 	request = params["question"]
 	num_entries = params[:num_entries].to_i
+	if num_entries == 0
+		num_entries = 3
+	end
     @array = @@rfp_collection.predict(request, {top_n: num_entries}).sort_by{|k,v| v}.reverse
     #get relevance of search terms to documents returned and append to array
     @array.each do |a|
