@@ -45,6 +45,8 @@ post '/answers' do
     #get relevance of search terms to documents returned and append to array
     @array.each do |a|
     	a.push( Indico.relevance( a[0], request ).first )
+    	a.push( Indico.text_tags(a[0], {top_n: 3}) )
+    	a.push( Indico.keywords(a[0], {top_n: 3}) )
     end
     
     erb :answers, :layout => :layout
