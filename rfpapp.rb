@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'indico'
 require 'json'
+require 'sinatra/activerecord'
+require './config/environments' #database configuration
+require './models/model'
 
 #move this to ENV
 Indico.api_key =  '42677a221b5a0133c313cc36901fcd62'
